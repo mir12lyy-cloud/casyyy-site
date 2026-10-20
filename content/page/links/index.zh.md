@@ -1,5 +1,7 @@
 ---
 title: "链接"
+layout: "links"
+slug: "links"
 links:
   - title: GitHub
     description: 开源代码展示平台
@@ -9,6 +11,15 @@ links:
     description: C++的参考手册
     website: https://zh.cppreference.com/
     image: C++.png
+  - title: Hugo
+    description: 高性能建站框架（本站使用的框架）
+    website: https://gohugo.io/
+    image: Hugo.png
+  - title: Stack
+    description: 本站点基于的Hugo主题
+    website: https://stack.cai.im/zh/
+    image: Stack.png
+
 menu:
     main: 
         weight: -50

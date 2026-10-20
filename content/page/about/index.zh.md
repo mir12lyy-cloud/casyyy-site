@@ -2,7 +2,9 @@
 title: 关于
 description: 关于本站及其作者CasYYY的一切。
 date: 2026-10-20
-lastmod: 2026-10-20
+lastmod: 2026-10-21
+layout: "about"
+slug: "about"
 menu:
     main: 
         weight: -90
@@ -10,9 +12,11 @@ menu:
             icon: user
 ---
 
+![只是可爱的Saki酱~](./saki_sanrio.png)
+
 ## 关于作者
 
-一个普通的大学生。有时喜欢把自己的奇怪的设想和玩具给写出来和表达出来。
+一个普通的双非大学生。有时喜欢把自己的奇怪的设想和玩具给写出来和表达出来。也许可能会有些额外的内容。
 
 ### 我的旅程
 
@@ -22,7 +26,7 @@ menu:
 
 - **前端**: 不会前端……
 - **后端**: C/C++，可能之后会学Rust
-- **工具**: Git
+- **工具**: Git, CMake, VS Code, WSL
 
 ### 未来计划
 
@@ -39,6 +43,6 @@ menu:
 
 ---
 
-> Live in this world. See this world. Feel it and truly accept every last moment.
+> "Live in this world. See this world. Feel it and truly accept every last moment."
 
 ---
