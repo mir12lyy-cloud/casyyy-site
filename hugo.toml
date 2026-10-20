@@ -1,4 +1,0 @@
-baseURL = 'https://example.org/'
-locale = 'zh-ch'
-title = 'CasYYY Site'
-theme = 'stack'

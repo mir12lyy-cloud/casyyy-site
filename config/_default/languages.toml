@@ -1,0 +1,8 @@
+[zh]
+    label  = "简体中文"
+    title  = "CasYYY Blog Site"
+    weight = 2
+
+    [zh.params.sidebar]
+        subtitle = "CasYYY 的堆积合计"
+
