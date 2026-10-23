@@ -25,7 +25,7 @@ comments = true
 
 而且自己的域名，服务器由于资金有限，只开了一个月。
 
-一个月后自然就烂尾了。当时的WordPress截图也不可考了。不过还是遗留了点东西
+一个月后自然就烂尾了。当时的WordPress截图也不可考了。不过还是遗留了点东西。
 
 ![第一次启动服务器，虽然WordPress没调好](try_first.jpg)
 
@@ -74,3 +74,6 @@ comments = true
 每篇文章都允许评论，我能回复的话会去回复的。
 
 ![Saki + 1](go_go.jpg)
+
+> "Expressing all my feelings, saying anything I want to in the afterword."
+> — *世界の歩き方*

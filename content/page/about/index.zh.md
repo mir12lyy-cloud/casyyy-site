@@ -5,14 +5,13 @@ date: 2026-10-20
 lastmod: 2026-10-21
 layout: "about"
 slug: "about"
+image: "saki_sanrio.png"
 menu:
     main: 
         weight: -90
         params:
             icon: user
 ---
-
-![只是可爱的Saki酱~](./saki_sanrio.png)
 
 ## 关于作者
 
@@ -44,5 +43,6 @@ menu:
 ---
 
 > "Live in this world. See this world. Feel it and truly accept every last moment."
+> —— *Arcaea*
 
 ---
