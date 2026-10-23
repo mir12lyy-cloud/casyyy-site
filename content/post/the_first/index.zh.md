@@ -3,6 +3,7 @@ date = '2026-10-22T20:58:17+08:00'
 draft = false
 title = '总起'
 slug = 'the_first'
+image = 'resonate.jpg'
 comments = true
 +++
 
@@ -35,6 +36,8 @@ comments = true
 于是再一次买了服务器，注册域名，然后想着自己去真正的备案。
 
 然后不出所料地是因为自己比较懒，去年的事情也不少。因此只是买了域名和服务器，然后又烂尾了。
+
+![哎……](tried.png)
 
 ### 现在
 
@@ -70,4 +73,4 @@ comments = true
 
 每篇文章都允许评论，我能回复的话会去回复的。
 
-![一起前进吧！](go_go.jpeg)
+![Saki + 1](go_go.jpg)
