@@ -1,10 +1,16 @@
 +++
-date = '2026-10-22T20:58:17+08:00'
-draft = false
-title = '总起'
-slug = 'the_first'
+title = "总起"
+description = "第一篇博客的碎碎念"
+date = "2026-10-23T22:56:00+08:00"
 image = 'resonate.jpg'
+math = false
+license = "CC BY-NC-SA 4.0"
 comments = true
+draft = false
+toc = true
+categories = ["想法"]
+tags = ["个人思考"]
+slug = "the_start"
 +++
 
 作为第一篇文章，思考要说什么也是个活。那么就公式点吧，不怎么会组织语言。

@@ -1,3 +1,5 @@
+@use "../../mixins" as *;
+
 .section-card {
     @include card-style;
     padding: var(--small-card-padding);

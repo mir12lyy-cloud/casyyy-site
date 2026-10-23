@@ -1,3 +1,5 @@
+@use "../../breakpoints" as *;
+
 .article-page {
     &.hide-sidebar-sm .left-sidebar {
         display: none;

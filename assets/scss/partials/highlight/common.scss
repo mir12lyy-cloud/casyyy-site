@@ -1,3 +1,4 @@
+@mixin render($color, $background-color, $error-color, $keyword-color, $text-color, $name-color, $literal-color) {
 /* Background */
 .chroma {
     color: $color;
@@ -5,8 +6,7 @@
 }
 
 /* Other */
-.chroma .x {
-}
+.chroma .x {}
 
 /* Error */
 .chroma .err {
@@ -30,13 +30,15 @@
     width: 100%;
     display: block;
 
-    > tbody {
+    >tbody {
         display: block;
         width: 100%;
-        > tr {
+
+        >tr {
             display: flex;
             width: 100%;
-            > td:last-child {
+
+            >td:last-child {
                 overflow-x: auto;
             }
         }
@@ -377,8 +379,7 @@ span.line {
 }
 
 /* Generic */
-.chroma .g {
-}
+.chroma .g {}
 
 /* GenericDeleted */
 .chroma .gd {
@@ -391,12 +392,10 @@ span.line {
 }
 
 /* GenericError */
-.chroma .gr {
-}
+.chroma .gr {}
 
 /* GenericHeading */
-.chroma .gh {
-}
+.chroma .gh {}
 
 /* GenericInserted */
 .chroma .gi {
@@ -404,12 +403,10 @@ span.line {
 }
 
 /* GenericOutput */
-.chroma .go {
-}
+.chroma .go {}
 
 /* GenericPrompt */
-.chroma .gp {
-}
+.chroma .gp {}
 
 /* GenericStrong */
 .chroma .gs {
@@ -422,13 +419,11 @@ span.line {
 }
 
 /* GenericTraceback */
-.chroma .gt {
-}
+.chroma .gt {}
 
 /* GenericUnderline */
-.chroma .gl {
-}
+.chroma .gl {}
 
 /* TextWhitespace */
-.chroma .w {
+.chroma .w {}
 }

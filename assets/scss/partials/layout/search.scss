@@ -1,3 +1,5 @@
+@use "../../mixins" as *;
+
 .search-form {
     position: relative;
     --button-size: 80px;

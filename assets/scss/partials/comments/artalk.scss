@@ -1,5 +1,5 @@
-@import "../../breakpoints";
-@import "../../mixins";
+@use "../../breakpoints" as *;
+@use "../../mixins" as *;
 
 .artalk-container {
     @include card-style;
