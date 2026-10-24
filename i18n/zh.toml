@@ -1,5 +1,6 @@
 toggleMenu = "切换菜单"
 darkMode   = "暗色模式"
+lightMode  = "亮色模式"
 
 [list]
     page       = "{{ .Count }} 个页面"

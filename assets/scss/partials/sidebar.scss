@@ -177,11 +177,19 @@
         color: var(--accent-color);
         font-weight: 700;
 
-        .icon-tabler-toggle-left {
+        .icon-tabler-sun {
+            display: unset;
+        }
+
+        .icon-tabler-moon-stars {
             display: none;
         }
 
-        .icon-tabler-toggle-right {
+        .toggle-label--light {
+            display: none;
+        }
+
+        .toggle-label--dark {
             display: unset;
         }
     }
@@ -195,7 +203,11 @@
     cursor: pointer;
     gap: var(--menu-icon-separation);
 
-    .icon-tabler-toggle-right {
+    .icon-tabler-sun {
+        display: none;
+    }
+
+    .toggle-label--dark {
         display: none;
     }
 }

@@ -23,7 +23,15 @@ rssFullContent = true
 
 [comments]
     enabled  = true
-    provider = "disqus"
+    provider = "waline"
+
+[comments.waline]
+    serverURL    = "https://waline-on-worker.huangjinyangyang.workers.dev/"
+    lang         = "zh-CN"
+    emoji        = ['https://app.unpkg.com/@waline/emojis@1.1.0/files/bmoji']
+    meta         = ['nick', 'mail']
+    requiredMeta = ['nick']
+    placeholder  = "发表你的想法："
 
 [cookies]
     enabled = false
