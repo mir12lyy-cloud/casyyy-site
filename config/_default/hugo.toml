@@ -2,7 +2,7 @@ baseURL                = "https://www.casyyy.com/"
 locale                 = "zh"
 title                  = "CasYYY Blog Site"
 defaultContentLanguage = "zh"
-hasCJKLanguage         = false
+hasCJKLanguage         = true
 
 theme = 'stack'
 
@@ -15,3 +15,7 @@ theme = 'stack'
 
 [services.disqus]
     shortname = "stack"
+
+enableGitInfo = true
+[frontmatter]
+    lastmod = [":git", "lastmod", ":fileModTime", "Date"]

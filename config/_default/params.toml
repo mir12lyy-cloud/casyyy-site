@@ -31,3 +31,7 @@ rssFullContent = true
     [cookies.categories]
         analytics  = true
         functional = true
+
+[dateFormat]
+    published = '2006-01-02'
+    lastUpdated = '2006-01-02 15:04:05 MST'

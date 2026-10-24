@@ -1,1 +1,10 @@
 /* Place your custom SCSS in HUGO_SITE_FOLDER/assets/scss/custom.scss */
+.menu::-webkit-scrollbar {
+    display: none;
+}
+
+html {
+    ::-webkit-scrollbar {
+        width: 20px;
+    }
+}

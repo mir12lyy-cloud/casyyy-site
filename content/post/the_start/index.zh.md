@@ -82,4 +82,4 @@ slug = "the_start"
 ![Saki + 1](go_go.jpg)
 
 > "Expressing all my feelings, saying anything I want to in the afterword."
-> — *世界の歩き方*
+> ——— *世界の歩き方*
