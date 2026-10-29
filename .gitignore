@@ -3,3 +3,5 @@
 .hugo_build.lock
 /assets/jsconfig.json
 /.vscode/
+
+AGENTS.md
