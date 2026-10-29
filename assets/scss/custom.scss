@@ -81,3 +81,11 @@ html {
         border-radius: 8px;
     }
 }
+
+.toc-nav li a {
+    color: var(--card-text-color-tertiary);
+}
+
+.toc-nav li.active-class a {
+    color: var(--accent-color);
+}

@@ -8,7 +8,7 @@ license = "CC BY-NC-SA 4.0"
 comments = true
 draft = false
 toc = true
-categories = ["想法"]
+categories = ["Ideas"]
 tags = ["个人思考"]
 slug = "the_start"
 +++

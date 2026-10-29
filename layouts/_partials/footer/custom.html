@@ -1,0 +1,14 @@
+<script>
+    let start = '2026-10-20'
+    start = new Date(start.replace(/-/g, "/"));
+    let now = new Date();
+    let timeDuration = now.getTime() - start.getTime();
+
+    const kHour = 1000 * 60 * 60;
+    let days = Math.floor(timeDuration / (kHour * 24));
+    let hours = Math.floor((timeDuration % (kHour * 24)) / kHour);
+    let minutes = Math.floor((timeDuration & kHour) / (1000 * 60));
+
+    let result = days + "天" + hours + "小时" + minutes + "分钟";
+    document.getElementById('runningdays').innerHTML = result;
+</script>

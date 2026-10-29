@@ -8,7 +8,7 @@ license = "CC BY-NC-SA 4.0"
 comments = true
 draft = false
 toc = true
-categories = ["知识"]
+categories = ["Knowledge"]
 tags = ["C/C++"]
 slug = "integer128"
 +++

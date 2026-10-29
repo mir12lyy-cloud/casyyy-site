@@ -1,13 +1,14 @@
-{{/* 
-    This helper is used to generate a background color and text color from a string
-    Used to generate deterministic colors for tags, categories, etc.
-*/}}
-
+{{/* This helper is used to generate a background color and text color from a string Used to generate deterministic
+colors for tags, categories, etc. */}}
 {{- $str := . -}}
 {{- $hash := hash.FNV32a $str -}}
-{{- $h := mod $hash 360 -}}
-
-{{- $backgroundColor := printf "hsl(%d, 60%%, 84%%)" $h -}}
-{{- $textColor := printf "hsl(%d, 60%%, 15%%)" $h -}}
-
-{{- return dict "BackgroundColor" $backgroundColor "TextColor" $textColor "Hue" $h -}}
+{{- $palette := slice
+(dict "BackgroundColor" "#4455dd" "TextColor" "#ffffff")
+(dict "BackgroundColor" "#ee6666" "TextColor" "#241719")
+(dict "BackgroundColor" "#ffdd44" "TextColor" "#282200")
+(dict "BackgroundColor" "#bbdd22" "TextColor" "#202700")
+(dict "BackgroundColor" "#33aaee" "TextColor" "#102a3a")
+(dict "BackgroundColor" "#99ccff" "TextColor" "#17213a") -}}
+{{- $colorIndex := mod (div $hash 31) (len $palette) -}}
+{{- $color := index $palette $colorIndex -}}
+{{- return $color -}}
