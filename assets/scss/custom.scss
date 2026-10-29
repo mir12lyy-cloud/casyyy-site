@@ -8,9 +8,15 @@
 
     --code-text-color: #99ccff;
 
+    --card-background: #f2f7ff;
+
     &[data-scheme="dark"] {
 
+        --card-background: #121a29;
+
         --code-text-color: #33aaee;
+
+        --card-text-color-main: #c9d1e0;
     }
 }
 
@@ -39,12 +45,14 @@ html {
 .highlight {
     max-width: 102% !important;
     background-color: var(--pre-background-color);
-    padding: var(--card-padding);
+    padding-top: 2.5em !important;
     position: relative;
-    border-radius: 20px;
+    border-radius: 8px;
     margin-left: -7px !important;
     margin-right: -12px;
     box-shadow: var(--shadow-l1) !important;
+
+    overflow: hidden;
 
     &:hover {
         .copyCodeButton {
@@ -64,16 +72,6 @@ html {
     }
 }
 
-// light模式下的代码块样式调整
-[data-scheme="light"] .article-content .highlight {
-    background-color: #fff9f3;
-}
-
-[data-scheme="light"] .chroma {
-    color: #ff6f00;
-    background-color: #fff9f3cc;
-}
-
 .article-page .main-article .article-content {
     img {
         max-width: 96% !important;
@@ -83,9 +81,41 @@ html {
 }
 
 .toc-nav li a {
-    color: var(--card-text-color-tertiary);
+    color: var(--card-text-color);
 }
 
 .toc-nav li.active-class a {
     color: var(--accent-color);
+}
+
+@media (min-width: 1024px) {
+    .article-list--compact {
+        display: grid;
+        // 目前是两列，如需三列，则后面再加一个1fr，以此类推
+        grid-template-columns: 1fr 1fr;
+        background: none;
+        box-shadow: none;
+        gap: 1rem;
+
+        article {
+            background: var(--card-background);
+            border: none;
+            box-shadow: var(--shadow-l2);
+            margin-bottom: 8px;
+            margin-right: 8px;
+            border-radius: 16px;
+        }
+    }
+}
+
+.highlight::before {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: 20px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ff5f56;
+    box-shadow: 20px 0 0 #ffbd2e, 40px 0 0 #27c93f;
 }

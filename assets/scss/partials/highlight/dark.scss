@@ -1,18 +1,74 @@
 /*
-*   Style: monokai
-*   https://xyproto.github.io/splash/docs/monokai.html
+* GitHub Dark syntax highlighting
+* https://github.com/primer/github-vscode-theme
 */
 
 @use "common";
 
 @mixin render {
-    @include common.render(
-        $color: #f8f8f2,
-        $background-color: #272822,
-        $error-color: #bb0064,
-        $keyword-color: #66d9ef,
-        $text-color: #f8f8f2,
-        $name-color: #a6e22e,
-        $literal-color: #e6db74
-    );
+    --chroma-background: #0d1117;
+    --chroma-text: #e6edf3;
+    --chroma-error: #f85149;
+    --chroma-error-background: transparent;
+    --chroma-line-highlight: #6e7681;
+    --chroma-line-number-table: #737679;
+    --chroma-line-number: #6e7681;
+
+    --chroma-keyword: #ff7b72;
+    --chroma-keyword-constant: #79c0ff;
+    --chroma-name-attribute: #e6edf3;
+    --chroma-name-builtin: #e6edf3;
+    --chroma-name-builtin-pseudo: #e6edf3;
+    --chroma-name-class: #f0883e;
+    --chroma-name-class-weight: bold;
+    --chroma-name-constant: #79c0ff;
+    --chroma-name-constant-weight: bold;
+    --chroma-name-decorator: #d2a8ff;
+    --chroma-name-decorator-weight: bold;
+    --chroma-name-entity: #ffa657;
+    --chroma-name-exception: #f0883e;
+    --chroma-name-exception-weight: bold;
+    --chroma-name-function: #d2a8ff;
+    --chroma-name-function-weight: bold;
+    --chroma-name-label: #79c0ff;
+    --chroma-name-label-weight: bold;
+    --chroma-name-namespace: #ff7b72;
+    --chroma-name-other: #e6edf3;
+    --chroma-name-property: #79c0ff;
+    --chroma-name-tag: #7ee787;
+    --chroma-name-variable: #79c0ff;
+
+    --chroma-literal: #a5d6ff;
+    --chroma-literal-date: #79c0ff;
+    --chroma-string: #a5d6ff;
+    --chroma-string-affix: #79c0ff;
+    --chroma-string-delimiter: #79c0ff;
+    --chroma-string-escape: #79c0ff;
+    --chroma-string-heredoc: #79c0ff;
+    --chroma-string-regex: #79c0ff;
+    --chroma-string-symbol: #a5d6ff;
+    --chroma-number: #a5d6ff;
+
+    --chroma-operator: #ff7b72;
+    --chroma-operator-weight: bold;
+    --chroma-punctuation: #e6edf3;
+    --chroma-comment: #8b949e;
+    --chroma-comment-style: italic;
+    --chroma-comment-special-weight: bold;
+
+    --chroma-generic-deleted: #ffa198;
+    --chroma-generic-deleted-background: #490202;
+    --chroma-generic-emph: #e6edf3;
+    --chroma-generic-emph-style: italic;
+    --chroma-generic-error: #ffa198;
+    --chroma-generic-heading: #79c0ff;
+    --chroma-generic-heading-weight: bold;
+    --chroma-generic-inserted: #56d364;
+    --chroma-generic-inserted-background: #0f5323;
+    --chroma-generic-output: #8b949e;
+    --chroma-generic-prompt: #8b949e;
+    --chroma-generic-strong-weight: bold;
+    --chroma-generic-subheading: #79c0ff;
+    --chroma-generic-traceback: #ff7b72;
+    --chroma-whitespace: #6e7681;
 }

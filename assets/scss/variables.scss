@@ -153,14 +153,14 @@
 }
 
 [data-scheme="light"] {
-    --pre-text-color: #272822;
-    --pre-background-color: #fafafa;
+    --pre-text-color: #1f2328;
+    --pre-background-color: #f7f7f7;
     @include lightTheme.render;
 }
 
 [data-scheme="dark"] {
-    --pre-text-color: #f8f8f2;
-    --pre-background-color: #272822;
+    --pre-text-color: #e6edf3;
+    --pre-background-color: #0d1117;
     @include darkTheme.render;
 }
 

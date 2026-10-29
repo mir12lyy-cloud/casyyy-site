@@ -5,6 +5,7 @@ rssFullContent = true
     since = 2026
 
 [sidebar]
+    emoji    = "✏️"
     avatar   = "img/avatar.png"
 
 [article]

@@ -23,7 +23,7 @@ slug = "integer128"
 
 不过，MSVC 事实上具有库模拟的 128 位整数。存放在 `<__msvc_int128.h>` 中，我们可以如下使用。
 
-```C++
+```c++
 #include <__msvc_int128.hpp>
 
 int main() {
@@ -46,7 +46,7 @@ int main() {
 
 在一些常用场景，诸如算法竞赛中，我们需要使用 128 位整数存储一些大数。但是 128 位整数通常没法直接输入打印。
 
-```C++
+```c++
 #include <cstdio>
 #include <iostream>
 using i128 = __int128;
@@ -66,7 +66,7 @@ int main() {
 
 为了应对这种情况，通常我们需要手写以下的 IO，这里举一个现成例子（摘录自：[Codeforces关于128位整数的tip](https://codeforces.com/blog/entry/75044)）：
 
-```C++
+```c++
 __int128 read() {
     __int128 x = 0, f = 1;
     char ch = getchar();
@@ -92,7 +92,7 @@ void print(__int128 x) {
 
 对于算法竞赛选手已经成为了标配。当然，如果你用的是 boost 库的 128 位整数，那倒是可以直接进行输入输出。
 
-```C++
+```c++
 #include <iostream>
 #include <boost/multiprecision/cpp_int.hpp>
 
@@ -113,7 +113,7 @@ int main() {
 
 对于输出，C++20 引入了 `<format>` ，同时 C++23 引入了 `<print>` 。使用 fmt 式的语法和格式控制符简化输出。
 
-```C++
+```c++
 #include <format>
 #include <iostream>
 #include <print>
@@ -129,7 +129,7 @@ int main() {
 
 然后有趣的地方就来了。clang 和 gcc 的编译器内置的 128 位整数中，也可以像以下方式输出：
 
-```C++
+```c++
 #include <format>
 #include <iostream>
 #include <print>
@@ -149,7 +149,7 @@ int main() {
 
 事实上并不复杂，基于 `<format>` 的输出的核心是一个 `std::formatter` 的结构体，在 gcc 的 libstdc++ 中，被以下定义：
 
-```C++
+```c++
   template<typename _Tp, typename _CharT>
     struct formatter
     {
@@ -163,7 +163,7 @@ int main() {
 
 libstdc++ 通过控制一个 constexpr 变量来决定一个整数是否能被输出。默认的形式是：
 
-```C++
+```c++
 template<typename _Tp>
 constexpr bool __is_formattable_integer = __is_integer<_Tp>::__value;
 
@@ -173,15 +173,15 @@ concept __formattable_integer = __is_formattable_integer<_Tp>;
 
 然后在以下中被检查：
 
-```C++
+```c++
 template<__format::__formattable_integer _Tp, __format::__char _CharT>
 struct formatter<_Tp, _CharT>;
 ```
 
 `__is_integer` 是 libstdc++ 内部用于判断一个类型是否位整型的一个 trait。事实上，针对非整数，会被如下定义：
 
-```C++
-template<typename _Tp>
+```c++
+  template<typename _Tp>
     struct __is_integer
     {
       enum { __value = 0 };
@@ -193,31 +193,30 @@ template<typename _Tp>
 
 以及针对扩展整数的生成宏：
 
-```C++
-
-#define __INT_N(TYPE)    \
-  __extension__    \
-  template<>    \
-    struct __is_integer<TYPE>  \
-    {     \
-      enum { __value = 1 };  \
-      typedef __true_type __type; \
-    };     \
-  __extension__    \
-  template<>    \
-    struct __is_integer<unsigned TYPE> \
-    {     \
-      enum { __value = 1 };  \
-      typedef __true_type __type; \
+```c++
+#define __INT_N(TYPE)                   \
+  __extension__                         \
+  template<>                            \
+    struct __is_integer<TYPE>           \
+    {                                   \
+      enum { __value = 1 };             \
+      typedef __true_type __type;       \
+    };                                  \
+  __extension__                         \
+  template<>                            \
+    struct __is_integer<unsigned TYPE>  \
+    {                                   \
+      enum { __value = 1 };             \
+      typedef __true_type __type;       \
     };
 ```
 
 libstdc++ 对 128 位整数，会通过这样的宏生成对应的 traits，然后被检测到，`__is_integer` 对于 128 位整数是 `true`，同时还做了一个偏特化进行强调：
 
-```C++
+```c++
 #if defined __SIZEOF_INT128__
-  template<> inline constexpr bool __is_formattable_integer<__int128>  = true;
-  template<> inline constexpr bool __is_formattable_integer<unsigned __int128> = true;
+template<> inline constexpr bool __is_formattable_integer<__int128>  = true;
+template<> inline constexpr bool __is_formattable_integer<unsigned __int128> = true;
 #endif
 ```
 
@@ -225,7 +224,7 @@ libstdc++ 对 128 位整数，会通过这样的宏生成对应的 traits，然�
 
 而 clang 在使用自己的 libc++ 时，则是通过如下方式进行支持：
 
-```C++
+```c++
 template <__fmt_char_type _CharT>
 struct formatter<__int128_t, _CharT> : public __formatter_integer<_CharT> {};
 ```
@@ -234,14 +233,14 @@ struct formatter<__int128_t, _CharT> : public __formatter_integer<_CharT> {};
 
 然后在 `__formatter_integer` 中，有一个这样的类型别名：
 
-```C++
+```c++
 using _Type = __make_32_64_or_128_bit_t<_Tp>;
 static_assert(!is_void<_Type>::value, "unsupported integral type used in __formatter_integer::__format");
 ```
 
 定义在内部的 `<__type_traits/make_32_64_or_128_bit.h>` 中，定义如下：
 
-```C++
+```c++
 using __make_32_64_or_128_bit_t _LIBCPP_NODEBUG =
     __copy_unsigned_t<_Tp,
         __conditional_t<sizeof(_Tp) <= sizeof(int32_t),    int32_t,
@@ -263,7 +262,7 @@ using __make_32_64_or_128_bit_t _LIBCPP_NODEBUG =
 
 在 C++20 之后，C++ 对于 128 位整数的输入没有太大变化，集中在输出。对于主要使用 gcc 或非 MSVC STL 的 clang，可以免去冗余的辅助函数：
 
-```C++
+```c++
 #include <print>
 int main() {
     using i128 = __int128;
@@ -288,7 +287,7 @@ C++20 中支持的有关位运算操作如下：
 
 然后，这些操作在 gcc 的 libstdc++ 中都支持 128 位。
 
-```C++
+```c++
 #include <print>
 #include <bit>
 

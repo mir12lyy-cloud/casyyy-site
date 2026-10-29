@@ -1,18 +1,74 @@
 /*
-*   Style: monokailight
-*   https://xyproto.github.io/splash/docs/monokailight.html
+* GitHub Light syntax highlighting
+* https://github.com/primer/github-vscode-theme
 */
 
 @use "common";
 
 @mixin render {
-    @include common.render(
-        $color: #272822,
-        $background-color: #fafafa,
-        $error-color: #960050,
-        $keyword-color: #00a8c8,
-        $text-color: #111111,
-        $name-color: #75af00,
-        $literal-color: #d88200
-    );
+    --chroma-background: #f7f7f7;
+    --chroma-text: #1f2328;
+    --chroma-error: #f6f8fa;
+    --chroma-error-background: #82071e;
+    --chroma-line-highlight: #dedede;
+    --chroma-line-number-table: #7f7f7f;
+    --chroma-line-number: #7f7f7f;
+
+    --chroma-keyword: #cf222e;
+    --chroma-keyword-constant: #cf222e;
+    --chroma-name-attribute: #1f2328;
+    --chroma-name-builtin: #6639ba;
+    --chroma-name-builtin-pseudo: #6a737d;
+    --chroma-name-class: #1f2328;
+    --chroma-name-class-weight: normal;
+    --chroma-name-constant: #0550ae;
+    --chroma-name-constant-weight: normal;
+    --chroma-name-decorator: #0550ae;
+    --chroma-name-decorator-weight: normal;
+    --chroma-name-entity: #6639ba;
+    --chroma-name-exception: #1f2328;
+    --chroma-name-exception-weight: normal;
+    --chroma-name-function: #6639ba;
+    --chroma-name-function-weight: normal;
+    --chroma-name-label: #900;
+    --chroma-name-label-weight: bold;
+    --chroma-name-namespace: #24292e;
+    --chroma-name-other: #1f2328;
+    --chroma-name-property: #1f2328;
+    --chroma-name-tag: #0550ae;
+    --chroma-name-variable: #953800;
+
+    --chroma-literal: #1f2328;
+    --chroma-literal-date: #1f2328;
+    --chroma-string: #0a3069;
+    --chroma-string-affix: #0a3069;
+    --chroma-string-delimiter: #0a3069;
+    --chroma-string-escape: #0a3069;
+    --chroma-string-heredoc: #0a3069;
+    --chroma-string-regex: #0a3069;
+    --chroma-string-symbol: #032f62;
+    --chroma-number: #0550ae;
+
+    --chroma-operator: #0550ae;
+    --chroma-operator-weight: normal;
+    --chroma-punctuation: #1f2328;
+    --chroma-comment: #57606a;
+    --chroma-comment-style: normal;
+    --chroma-comment-special-weight: normal;
+
+    --chroma-generic-deleted: #82071e;
+    --chroma-generic-deleted-background: #ffebe9;
+    --chroma-generic-emph: #1f2328;
+    --chroma-generic-emph-style: normal;
+    --chroma-generic-error: #1f2328;
+    --chroma-generic-heading: #1f2328;
+    --chroma-generic-heading-weight: normal;
+    --chroma-generic-inserted: #116329;
+    --chroma-generic-inserted-background: #dafbe1;
+    --chroma-generic-output: #1f2328;
+    --chroma-generic-prompt: #1f2328;
+    --chroma-generic-strong-weight: normal;
+    --chroma-generic-subheading: #1f2328;
+    --chroma-generic-traceback: #1f2328;
+    --chroma-whitespace: #fff;
 }
