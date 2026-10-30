@@ -31,9 +31,18 @@
 
     <div class="tagCloud-tags">
         {{ range first $limit $taxonomy.ByCount }}
-        <a href="{{ .Page.RelPermalink }}">
-            {{ .Page.Title }}
+        {{ if .Page.Params.style.background }}
+        <a href="{{ .Page.RelPermalink }}"
+            style="border-left: 6px solid; border-left-color: {{ .Page.Params.style.background }}; display: inline-flex; gap: 6px">
+            <span class="title">{{ .Page.Title }}</span>
+            <span class="count">{{ .Count }}</span>
         </a>
+        {{ else }}
+        <a href="{{ .Page.RelPermalink }}" style="display: inline-flex; gap: 6px">
+            <span class="title">{{ .Page.Title }}</span>
+            <span class="count">{{ .Count }}</span>
+        </a>
+        {{ end }}
         {{ end }}
     </div>
 </section>
