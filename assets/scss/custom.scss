@@ -4,11 +4,12 @@
 }
 
 :root {
-    --code-background-color: #f8f8f8;
 
-    --code-text-color: #99ccff;
+    --code-text-color: #4455dd;
 
     --card-background: #f2f7ff;
+
+    --card-text-color-main: #2b3340;
 
     &[data-scheme="dark"] {
 
@@ -91,7 +92,6 @@ html {
 @media (min-width: 1024px) {
     .article-list--compact {
         display: grid;
-        // 目前是两列，如需三列，则后面再加一个1fr，以此类推
         grid-template-columns: 1fr 1fr;
         background: none;
         box-shadow: none;
@@ -118,4 +118,20 @@ html {
     border-radius: 50%;
     background: #ff5f56;
     box-shadow: 20px 0 0 #ffbd2e, 40px 0 0 #27c93f;
+}
+
+#main-menu li a {
+    border-left: 3px solid transparent;
+    padding-left: 6px;
+}
+
+#main-menu li.current a {
+    border-left: 3px solid;
+    border-color: var(--accent-color);
+}
+
+.tagCloud {
+    .tagCloud-count {
+        color: var(--body-text-color);
+    }
 }

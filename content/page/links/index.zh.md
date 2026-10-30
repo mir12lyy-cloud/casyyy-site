@@ -8,7 +8,7 @@ links:
     website: https://github.com
     image: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
   - title: Cppreference 中文版
-    description: C++的参考手册
+    description: C++ 的参考手册
     website: https://zh.cppreference.com/
     image: C++.png
   - title: Hugo
@@ -16,7 +16,7 @@ links:
     website: https://gohugo.io/
     image: Hugo.png
   - title: Stack
-    description: 本站点基于的Hugo主题
+    description: 本站点基于的 Hugo 主题
     website: https://stack.cai.im/zh/
     image: Stack.png
 

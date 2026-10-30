@@ -9,7 +9,7 @@ comments = true
 draft = false
 toc = true
 categories = ["Knowledge"]
-tags = ["C/C++"]
+tags = ["C_CPP"]
 slug = "integer128"
 +++
 
@@ -127,7 +127,7 @@ int main() {
 }
 ```
 
-然后有趣的地方就来了。clang 和 gcc 的编译器内置的 128 位整数中，也可以像以下方式输出：
+然后有趣的地方就来了。Clang 和 GCC 的编译器内置的 128 位整数中，也可以像以下方式输出：
 
 ```c++
 #include <format>
@@ -147,7 +147,7 @@ int main() {
 
 ### 原理
 
-事实上并不复杂，基于 `<format>` 的输出的核心是一个 `std::formatter` 的结构体，在 gcc 的 libstdc++ 中，被以下定义：
+事实上并不复杂，基于 `<format>` 的输出的核心是一个 `std::formatter` 的结构体，在 GCC 的 libstdc++ 中，被以下定义：
 
 ```c++
   template<typename _Tp, typename _CharT>
@@ -189,7 +189,7 @@ struct formatter<_Tp, _CharT>;
     };
 ```
 
-整数则是把对应的 `__value` 设置成 0，`__false_type` 设置为 `__true_type`。
+整数则是把对应的 `__value` 设置成 1，`__false_type` 设置为 `__true_type`。
 
 以及针对扩展整数的生成宏：
 
@@ -222,7 +222,7 @@ template<> inline constexpr bool __is_formattable_integer<unsigned __int128> = t
 
 这样子，`__formattable_integer` 对于 128 位整数会被认为是 `true` 。然后就可以使用 libstdc++ 针对整数的 `std::formatter` 了。`std::format` 和 `std::print` 都基于 `std::formatter`，因此就能正常输出了。
 
-而 clang 在使用自己的 libc++ 时，则是通过如下方式进行支持：
+而 Clang 在使用自己的 libc++ 时，则是通过如下方式进行支持：
 
 ```c++
 template <__fmt_char_type _CharT>
@@ -254,13 +254,13 @@ using __make_32_64_or_128_bit_t _LIBCPP_NODEBUG =
     > > >;
 ```
 
-在 clang 内部有 128 位整数下，实例化结果会是 128 位整数，然后就可以正常进行格式化了。
+在 Clang 内部有 128 位整数下，实例化结果会是 128 位整数，然后就可以正常进行格式化了。
 
-**注意：如果 clang 使用的是 MSVC STL，即使 128 位仍然存在，但此时是无法输出的。MSVC STL没有针对 128 位整数进行特化。**
+**注意：如果 Clang 使用的是 MSVC STL，即使 128 位仍然存在，但此时是无法输出的。MSVC STL没有针对 128 位整数进行特化。**
 
 ### 总结
 
-在 C++20 之后，C++ 对于 128 位整数的输入没有太大变化，集中在输出。对于主要使用 gcc 或非 MSVC STL 的 clang，可以免去冗余的辅助函数：
+在 C++20 之后，C++ 对于 128 位整数的输入没有太大变化，集中在输出。对于主要使用 GCC 或非 MSVC STL 的 Clang，可以免去冗余的辅助函数：
 
 ```c++
 #include <print>
@@ -285,7 +285,7 @@ C++20 中支持的有关位运算操作如下：
 - `std::countl_zero` / `std::countl_one` / `std::countr_zero` / `std::countr_one` 计算从最高/最低有效位开始连续 0/1 的数量。
 - `std::popcount` 计算无符号整数中 1 位的数量。
 
-然后，这些操作在 gcc 的 libstdc++ 中都支持 128 位。
+然后，这些操作在 GCC 的 libstdc++ 中都支持 128 位。
 
 ```c++
 #include <print>
@@ -308,7 +308,7 @@ int main() {
 }
 ```
 
-非 MSVC STL 的 clang 也可以如此使用。
+非 MSVC STL 的 Clang 也可以如此使用。
 
 ## 结语
 
